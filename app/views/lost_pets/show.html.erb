@@ -1,0 +1,37 @@
+<%- model_class = LostPet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @lost_pet.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:info) %>:</strong></dt>
+  <dd><%= @lost_pet.info %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:report_date) %>:</strong></dt>
+  <dd><%= @lost_pet.report_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lost_date) %>:</strong></dt>
+  <dd><%= @lost_pet.lost_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @lost_pet.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @lost_pet.longitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:found_date) %>:</strong></dt>
+  <dd><%= @lost_pet.found_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pet_id) %>:</strong></dt>
+  <dd><%= @lost_pet.pet_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @lost_pet.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:district_id) %>:</strong></dt>
+  <dd><%= @lost_pet.district_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              lost_pets_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_lost_pet_path(@lost_pet), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              lost_pet_path(@lost_pet),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

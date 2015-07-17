@@ -1,0 +1,10 @@
+<%= simple_form_for @my_search, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :lost_pet_id %>
+  <%= error_span(@my_search[:lost_pet_id]) %>
+  <%= f.input :user_id %>
+  <%= error_span(@my_search[:user_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                my_searches_path, :class => 'btn btn-default' %>
+<% end %>
